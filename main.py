@@ -1,5 +1,6 @@
 import json
 import re
+import random_responses
 
 
 # Load JSON data
@@ -35,14 +36,21 @@ def get_response(input_string):
         # Add score to list
         score_list.append(response_score)
         # Debugging: Find the best phrase
-        print(response_score, response["user_input"])
+        # print(response_score, response["user_input"])
 
+    # Find the best response and return it if they're not all 0
     best_response = max(score_list)
     response_index = score_list.index(best_response)
+
+    # Check if input is empty
+    if input_string == "":
+        return "Please type something so we can chat :("
+
+    # If there is no good response, return a random one.
     if best_response != 0:
         return response_data[response_index]["bot_response"]
 
-    return "I didn't understand what you wrote!"
+    return random_responses.random_string()
 
 
 while True:
