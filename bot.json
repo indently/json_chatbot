@@ -27,7 +27,7 @@
     "response_type": "question",
     "user_input": ["refund", "how", "can", "I", "get"],
     "bot_response": "We don't offer refunds for free education.",
-    "required_words": ["refund", "I"]
+    "required_words": ["refund", "i"]
   },
   {
     "response_type": "question",

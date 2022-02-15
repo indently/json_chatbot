@@ -32,6 +32,7 @@ def get_response(input_string):
 
         # Amount of required words should match the required score
         if required_score == len(required_words):
+            # print(required_score == len(required_words))
             # Check each word the user has typed
             for word in split_message:
                 # If the word is in the response, add to the score
