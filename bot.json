@@ -21,7 +21,7 @@
     "response_type": "question",
     "user_input": ["how", "to", "learn", "code", "coding", "apps"],
     "bot_response": "Start by typing: 'How to learn coding' on Google.",
-    "required_words": ["how", "apps"]
+    "required_words": ["learn", "code"]
   },
   {
     "response_type": "question",
@@ -33,6 +33,6 @@
     "response_type": "question",
     "user_input": ["how", "are", "you"],
     "bot_response": "I'm great! Thanks for asking.",
-    "required_words": []
+    "required_words": ["how", "are", "you"]
   }
 ]

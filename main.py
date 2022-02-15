@@ -21,17 +21,22 @@ def get_response(input_string):
     # Check all the responses
     for response in response_data:
         response_score = 0
-        # Check if there are any required words
-        if response["required_words"]:
-            for word in split_message:
-                if word not in response["required_words"]:
-                    break  # If not, exit response.
+        required_score = 0
+        required_words = response["required_words"]
 
-        # Check each word the user has typed
-        for word in split_message:
-            # If the word is in the response, add to the score
-            if word in response["user_input"]:
-                response_score += 1
+        # Check if there are any required words
+        if required_words:
+            for word in split_message:
+                if word in required_words:
+                    required_score += 1
+
+        # Amount of required words should match the required score
+        if required_score == len(required_words):
+            # Check each word the user has typed
+            for word in split_message:
+                # If the word is in the response, add to the score
+                if word in response["user_input"]:
+                    response_score += 1
 
         # Add score to list
         score_list.append(response_score)
